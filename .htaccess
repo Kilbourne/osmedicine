@@ -1,0 +1,7 @@
+
+# Turn mod_rewrite on
+RewriteEngine On
+
+
+RewriteCond %{REQUEST_URI} !/projectname/web/
+RewriteRule (.*) /projectname/web/$1 [L]
