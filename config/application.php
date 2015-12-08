@@ -60,17 +60,6 @@ define('LOGGED_IN_SALT', getenv('LOGGED_IN_SALT'));
 define('NONCE_SALT', getenv('NONCE_SALT'));
 
 /**
- * Plugins which get force-enabled in development environment.
- * Include them in your composer.json "require-dev" so they get installed only on dev machine.
- *
- * Specify relative path to plugin's main PHP file.
- */
-
-$BEDROCK_DEV_PLUGINS = array(
-
-);
-
-/**
  * Custom Settings
  */
 define('AUTOMATIC_UPDATER_DISABLED', true);
