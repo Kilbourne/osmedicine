@@ -1,3 +1,16 @@
+### 1.5.0: 2016-01-17
+
+* Fix `DISABLE_WP_CRON` setting via ENV variable ([#229](https://github.com/roots/bedrock/pull/229))
+* Set default `DB_CHARSET` to `utf8mb4`
+
+### 1.4.7: 2016-01-07
+
+* Update to WordPress 4.4.1
+
+### 1.4.6: 2015-12-09
+
+* Update to WordPress 4.4
+
 ### 1.4.5: 2015-09-16
 
 * Update to WordPress 4.3.1
