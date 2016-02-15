@@ -3,5 +3,5 @@
 RewriteEngine On
 
 
-RewriteCond %{REQUEST_URI} !/projectname/web/
-RewriteRule (.*) /projectname/web/$1 [L]
+RewriteCond %{REQUEST_URI} !/osmedicine/web/
+RewriteRule (.*) /osmedicine/web/$1 [L]
