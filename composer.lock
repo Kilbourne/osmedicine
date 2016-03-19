@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e384eb1a5193051e4d1857a0207ea49b",
-    "content-hash": "9715f335274d48d1c4a9d121f6503690",
+    "hash": "757089856c49debc3b610a0fb5a547a4",
+    "content-hash": "4b1711b0c3a41e74e422d3997f27a60a",
     "packages": [
         {
             "name": "composer/installers",
@@ -208,7 +208,7 @@
                 "composer/installers": "~1.0.12"
             },
             "type": "wordpress-muplugin",
-            "notification-url": "http://packagist.org/downloads/",
+            "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
                     "name": "Rastislav Lamos",
@@ -216,6 +216,60 @@
                 }
             ],
             "time": "2015-04-03 16:07:50"
+        },
+        {
+            "name": "mobiledetect/mobiledetectlib",
+            "version": "2.8.19",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/serbanghita/Mobile-Detect.git",
+                "reference": "99e1c21c32104af2d035ff5d2fd8aff8cb29e27c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/serbanghita/Mobile-Detect/zipball/99e1c21c32104af2d035ff5d2fd8aff8cb29e27c",
+                "reference": "99e1c21c32104af2d035ff5d2fd8aff8cb29e27c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "dev-master",
+                "johnkary/phpunit-speedtrap": "~1.0@dev",
+                "phpunit/phpunit": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "Mobile_Detect.php"
+                ],
+                "psr-0": {
+                    "Detection": "namespaced/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Serban Ghita",
+                    "email": "serbanghita@gmail.com",
+                    "homepage": "http://mobiledetect.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Mobile_Detect is a lightweight PHP class for detecting mobile devices. It uses the User-Agent string combined with specific HTTP headers to detect the mobile environment.",
+            "homepage": "https://github.com/serbanghita/Mobile-Detect",
+            "keywords": [
+                "detect mobile devices",
+                "mobile",
+                "mobile detect",
+                "mobile detector",
+                "php mobile detect"
+            ],
+            "time": "2015-12-24 16:37:50"
         },
         {
             "name": "oscarotero/env",
@@ -373,16 +427,16 @@
             "homepage": "https://wordpress.org/plugins/admin-post-navigation/"
         },
         {
-            "name": "wpackagist-plugin/advanced-custom-fields",
-            "version": "4.4.3",
+            "name": "wpackagist-plugin/category-color",
+            "version": "1.2",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/advanced-custom-fields/",
-                "reference": "tags/4.4.3"
+                "url": "http://plugins.svn.wordpress.org/category-color/",
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields.4.4.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/category-color.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -390,47 +444,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/advanced-custom-fields/"
-        },
-        {
-            "name": "wpackagist-plugin/custom-post-type-ui",
-            "version": "1.1.2",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/custom-post-type-ui/",
-                "reference": "tags/1.1.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.1.2.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/custom-post-type-ui/"
-        },
-        {
-            "name": "wpackagist-plugin/custom-upload-dir",
-            "version": "3.4.3.1",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/custom-upload-dir/",
-                "reference": "tags/3.4.3.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/custom-upload-dir.3.4.3.1.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/custom-upload-dir/"
+            "homepage": "https://wordpress.org/plugins/category-color/"
         },
         {
             "name": "wpackagist-plugin/disable-comments",
@@ -473,6 +487,26 @@
             "homepage": "https://wordpress.org/plugins/duplicate-post/"
         },
         {
+            "name": "wpackagist-plugin/easy-image-widget",
+            "version": "1.1.1",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/easy-image-widget/",
+                "reference": "tags/1.1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/easy-image-widget.1.1.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/easy-image-widget/"
+        },
+        {
             "name": "wpackagist-plugin/enable-media-replace",
             "version": "3.0.4",
             "source": {
@@ -491,6 +525,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/enable-media-replace/"
+        },
+        {
+            "name": "wpackagist-plugin/export-categories",
+            "version": "1.0",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/export-categories/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/export-categories.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/export-categories/"
         },
         {
             "name": "wpackagist-plugin/favicon-by-realfavicongenerator",
@@ -513,16 +567,16 @@
             "homepage": "https://wordpress.org/plugins/favicon-by-realfavicongenerator/"
         },
         {
-            "name": "wpackagist-plugin/post-type-switcher",
-            "version": "1.5",
+            "name": "wpackagist-plugin/juiz-social-post-sharer",
+            "version": "1.4.2",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/post-type-switcher/",
-                "reference": "tags/1.5"
+                "url": "http://plugins.svn.wordpress.org/juiz-social-post-sharer/",
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/post-type-switcher.1.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/juiz-social-post-sharer.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -530,7 +584,27 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/post-type-switcher/"
+            "homepage": "https://wordpress.org/plugins/juiz-social-post-sharer/"
+        },
+        {
+            "name": "wpackagist-plugin/no-category-base-wpml",
+            "version": "1.2",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/no-category-base-wpml/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/no-category-base-wpml.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/no-category-base-wpml/"
         },
         {
             "name": "wpackagist-plugin/post-types-order",
@@ -553,46 +627,6 @@
             "homepage": "https://wordpress.org/plugins/post-types-order/"
         },
         {
-            "name": "wpackagist-plugin/siteorigin-panels",
-            "version": "2.2.2",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/siteorigin-panels/",
-                "reference": "tags/2.2.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/siteorigin-panels.2.2.2.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/siteorigin-panels/"
-        },
-        {
-            "name": "wpackagist-plugin/so-widgets-bundle",
-            "version": "1.5.6",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/so-widgets-bundle/",
-                "reference": "tags/1.5.6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/so-widgets-bundle.1.5.6.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/so-widgets-bundle/"
-        },
-        {
             "name": "wpackagist-plugin/svg-support",
             "version": "2.2.2",
             "source": {
@@ -613,16 +647,16 @@
             "homepage": "https://wordpress.org/plugins/svg-support/"
         },
         {
-            "name": "wpackagist-plugin/woocommerce",
-            "version": "2.5.1",
+            "name": "wpackagist-plugin/tabsy",
+            "version": "1.3",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/woocommerce/",
-                "reference": "tags/2.5.1"
+                "url": "http://plugins.svn.wordpress.org/tabsy/",
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/woocommerce.2.5.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/tabsy.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -630,21 +664,61 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/woocommerce/"
+            "homepage": "https://wordpress.org/plugins/tabsy/"
+        },
+        {
+            "name": "wpackagist-plugin/widget-importer-exporter",
+            "version": "1.2.2",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/widget-importer-exporter/",
+                "reference": "tags/1.2.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/widget-importer-exporter.1.2.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/widget-importer-exporter/"
+        },
+        {
+            "name": "wpackagist-plugin/wordpress-importer",
+            "version": "0.6.1",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/wordpress-importer/",
+                "reference": "tags/0.6.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-importer.0.6.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wordpress-importer/"
         }
     ],
     "packages-dev": [
         {
             "name": "wpackagist-plugin/debug-bar",
-            "version": "0.8.2",
+            "version": "0.8.4",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/debug-bar/",
-                "reference": "tags/0.8.2"
+                "reference": "tags/0.8.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/debug-bar.0.8.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/debug-bar.0.8.4.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -655,16 +729,36 @@
             "homepage": "https://wordpress.org/plugins/debug-bar/"
         },
         {
-            "name": "wpackagist-plugin/query-monitor",
-            "version": "2.8.1",
+            "name": "wpackagist-plugin/fakerpress",
+            "version": "0.4.2",
             "source": {
                 "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/query-monitor/",
-                "reference": "tags/2.8.1"
+                "url": "http://plugins.svn.wordpress.org/fakerpress/",
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/query-monitor.2.8.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/fakerpress.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/fakerpress/"
+        },
+        {
+            "name": "wpackagist-plugin/query-monitor",
+            "version": "2.9.0",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/query-monitor/",
+                "reference": "tags/2.9.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/query-monitor.2.9.0.zip",
                 "reference": null,
                 "shasum": null
             },
