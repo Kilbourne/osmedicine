@@ -1,0 +1,35 @@
+MU Settings
+	
+	1. Attiva tema
+	2. Disable Comment	
+	3. Allow new registration
+	4. Active plugins
+
+SubSite Settings
+	1. Remove blog slug & Updrage Permalink
+	*2. Create Minor Page
+	**3. Attiva Tema
+	4. Set Category Color
+	**5. Attiva Plugin
+	*6. Change Default Category
+	7. Social Sharer,Post Types Order, Duplicate Post
+	*8. Import widget,menu,menu settings,categories,slider,upme settings,fields	
+	*9. Set Header Background 
+
+
+Main Settings
+	1. Set Upme
+	*2. Attiva Profile Template
+Child Settings
+	1. Set Upme
+	*2. Attiva Redirect Template
+
+Control Repos
+	
+	if template exists
+	loop category
+	if field e responsive menu
+	control allignment
+	automatize
+	socialsharer subsite
+	link on header
