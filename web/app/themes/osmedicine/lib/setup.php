@@ -3,7 +3,7 @@
 namespace Roots\Sage\Setup;
 
 use Roots\Sage\Assets;
-
+use Mobile_Detect;
 /**
  * Theme setup
  */
@@ -64,8 +64,16 @@ function widgets_init() {
   ]);
 
   register_sidebar([
-    'name'          => __('Footer', 'sage'),
-    'id'            => 'sidebar-footer',
+    'name'          => __('Mobile first sidebar', 'sage'),
+    'id'            => 'sidebar-mobile',
+    'before_widget' => '<section class="widget %1$s %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h3>',
+    'after_title'   => '</h3>'
+  ]);
+    register_sidebar([
+    'name'          => __('Mobile second sidebar', 'sage'),
+    'id'            => 'sidebar-mobile-2',
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
     'before_title'  => '<h3>',
@@ -79,16 +87,36 @@ add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
  */
 function display_sidebar() {
   static $display;
+$detect = new Mobile_Detect;
 
-  isset($display) || $display = !in_array(true, [
+
+
+  isset($display) || !$detect->isMobile() && $display = !in_array(true, [
     // The sidebar will NOT be displayed if ANY of the following return true.
     // @link https://codex.wordpress.org/Conditional_Tags
     is_404(),
-    is_front_page(),
+    //is_front_page(),
     is_page_template('template-custom.php'),
   ]);
 
   return apply_filters('sage/display_sidebar', $display);
+}
+
+function display_sidebar_mobile() {
+  static $display;
+$detect = new Mobile_Detect;
+
+
+
+  isset($display) || $detect->isMobile() && $display = !in_array(true, [
+    // The sidebar will NOT be displayed if ANY of the following return true.
+    // @link https://codex.wordpress.org/Conditional_Tags
+    is_404(),
+    //is_front_page(),
+    is_page_template('template-custom.php'),
+  ]);
+
+  return apply_filters('sage/display_sidebar_mobile', $display);
 }
 
 /**
