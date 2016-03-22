@@ -79,7 +79,7 @@ add_filter('wp_nav_menu',__NAMESPACE__ . '\\custom_menu', 10, 2);
 function custom_menu($nav_menu,$args){
    if( !$args->theme_location == 'primary_navigation' ){
       return $nav_menu.'<div class="right social">
-        <span class="icon fb"></span><span class="icon twi"></span><span class="icon rss"></span>  
+        <span class="icon fb"></span><span class="icon twi"></span><span class="icon rss"></span>
       </div>';
    }
 }
@@ -88,13 +88,13 @@ function add_search_box_to_menu( $items, $args ) {
     if( $args->theme_location == 'primary_navigation' ){
         $items=$items.'<li class="menu-item search" >'.get_search_form(false).'</li>';
     }else{
-              
-        if(!is_user_logged_in ()){ 
+
+        if(!is_user_logged_in ()){
           $items=$items.'<li class="hvr-fade menu-item"><a href="'. get_page_url_by_name('Login') .'">Login</a></li><li class="hvr-fade menu-item"><a href="'. get_page_url_by_name('Registrazione') .'">Registrati</a></li>';
-        }else{ 
+        }else{
           $items=$items.'<li class="hvr-fade menu-item"><a href="'. get_page_url_by_name('Guarda profilo') .'">Profilo</a></li>';
         }
-    }    
+    }
     return $items;
 
 
@@ -131,17 +131,32 @@ function OSM_validate_code() {
           ob_clean();
 $current_user_id=get_current_user_id( );
 $user_info=get_userdata( $current_user_id );
-    $subsite_id=isset( $_POST['subsite_id'] ) ? strtoupper( sanitize_text_field($_POST['subsite_id'] )) : '';
-    $subsite=isset( $_POST['subsite'] ) ? sanitize_text_field($_POST['subsite'] ) : '';
+
     $code=isset( $_POST['code'] ) ? strtoupper( sanitize_text_field($_POST['code'] )) : '';
+    $baweic_options = get_option( 'baweic_options' );
+  $subsite=isset( $baweic_options['codes']['all'][$code] ) ? $baweic_options['codes']['all'][$code] : '';
+      $blogs_array=wp_get_sites(  );
+      $subsite_id='';
+    foreach ($blogs_array as $key => $blog) {
+      $id=$blog["blog_id"];
+      $details=get_blog_details($id);
 
-      $baweic_options = get_option( 'baweic_options' );
+        $empty=false;
+        $path=$details->path;
+        $path_arr=explode( "/", $path );
+        $count=count($path_arr);
+        $slug = $path_arr[$count-2];
+        if($subsite===$slug) $subsite_id=$id;
+
+      }
+
+
 //wp_send_json_error(array( $baweic_options['codes'],$subsite));
-  if ( ! array_key_exists( $subsite, $baweic_options['codes'] ) ) {
+    if ( $code ==='' ) {
 
-    $data=  '<p class="error">'.sprintf(__( '<strong>ERROR</strong>: The subsite named %s does not exists.', 'sage' ), $subsite).'</p>' ;
+    $data=  '<p class="error">'.sprintf(__( '<strong>ERROR</strong>: Please insert a code.', 'sage' ), $subsite).'</p>' ;
     wp_send_json_error($data);
-  } elseif ( ! array_key_exists( $code, $baweic_options['codes'][$subsite] ) ) {
+  }  elseif ( $subsite ==='' || $subsite_id ==='' || ! isset($baweic_options['codes'][$subsite] ) || ! array_key_exists( $code, $baweic_options['codes'][$subsite] ) ) {
 
     $data=  __( '<p class="error"><strong>ERROR</strong>: Wrong Invitation Code.</p>', 'sage' ) ;
     wp_send_json_error($data);
@@ -160,8 +175,9 @@ $user_info=get_userdata( $current_user_id );
         // set usermeta
         $details=get_blog_details($subsite_id);
         $url=$details->siteurl;
+        $name=$details->blogname;
         $data_text=sprintf('<p class="success"><strong>SUCCESS</strong>: Registered to %s restricted area.</p>', $subsite);
-        $data= array('data'=>$data_text,'url'=>$url);
+        $data= array('data'=>$data_text,'url'=>$url,'name'=>$name);
         wp_send_json_success( $data );
       }
 
@@ -182,7 +198,7 @@ function get_root_page_url_by_name($name){
   restore_current_blog();
   return $url;
 }
-if(function_exists('acf_add_options_page')) { 
+if(function_exists('acf_add_options_page')) {
 
   acf_add_options_page();
 
@@ -202,7 +218,7 @@ jQuery("#postexcerpt .handlediv").after("<div style=\"position:absolute;top:12px
 
      jQuery("span#excerpt_counter").text(jQuery("#excerpt").val().length);
    });
-  
+
 });</script>';
 }
 }
@@ -213,11 +229,11 @@ add_filter('author_rewrite_rules', __NAMESPACE__ . '\\no_author_base_rewrite_rul
 function no_author_base_rewrite_rules($author_rewrite) {
     global $wpdb;
     $author_rewrite = array();
-    $authors = $wpdb->get_results("SELECT user_nicename AS nicename from $wpdb->users");   
+    $authors = $wpdb->get_results("SELECT user_nicename AS nicename from $wpdb->users");
     foreach($authors as $author) {
         $author_rewrite["({$author->nicename})/page/?([0-9]+)/?$"] = 'index.php?author_name=$matches[1]&paged=$matches[2]';
         $author_rewrite["({$author->nicename})/?$"] = 'index.php?author_name=$matches[1]';
-    }  
+    }
     return $author_rewrite;
 }
 
@@ -226,12 +242,12 @@ add_action('init', __NAMESPACE__ . '\\author_rewrite_so_22115103');
 }
 
 function author_rewrite_so_22115103() {
-   global $wp_rewrite; 
+   global $wp_rewrite;
    if( 'author' == $wp_rewrite->author_base ) $wp_rewrite->author_base = null;
 }
 
-//add_filter( 'get_the_author_user_url', __NAMESPACE__ . '\\guest_author_url' ); 
-add_filter( 'the_author', __NAMESPACE__ . '\\guest_author_link' ); 
+//add_filter( 'get_the_author_user_url', __NAMESPACE__ . '\\guest_author_url' );
+add_filter( 'the_author', __NAMESPACE__ . '\\guest_author_link' );
 //add_filter( 'get_the_author_display_name', __NAMESPACE__ . '\\guest_author_name' );
 
 function guest_author_url($url) {
@@ -245,8 +261,8 @@ function guest_author_url($url) {
 
 function guest_author_link($name) {
   global $post;
-  
-  
+
+
   $guest_name = get_field('autore');
 
 if( !!$guest_name ) {

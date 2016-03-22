@@ -3,7 +3,6 @@
  * Template Name: Profile Page
  */
 ?>
-<?php // acf_form_head(); ?>
 <?php while (have_posts()) : the_post(); ?>
   <?php get_template_part('templates/page', 'header'); ?>
   <?php get_template_part('templates/content', 'page'); ?>
@@ -30,33 +29,29 @@
         if($id!=1)$registered_blogs[$id]=$details->blogname;
       }
   }
-  if(false){
-          acf_form( array(
-      'post_id' =>  'user_'.$current_user->ID,
-      'field_groups' => array(56),
-      'fields' => false,
-      'form'=>false
-      ) );
-  }
   if(!$empty){
 ?>
 
 <div class="insert-code-wrapper upme-profile-tab-panel">
   <h4 class="upme-separator" ><?php _e('Iscriviti alle sottoaree','sage') ?></h4>
+  <!--
   <div class="subsite-wrapper code-field-wrapper">
     <div>
-      <label for="subsite" class="upme-field-type" ><span><?php _e('Area Specialistica','sage') ?></span></label>
+      <label for="subsite" class="upme-field-type" ><span><?php //_e('Area Specialistica','sage') ?></span></label>
     </div><div class="upme-field-value custom-select" >
       <select id="subsite" class="upme-input">
         <?php
+        /*
           foreach ($unregistered_blogs as $key => $blog) {
 
             echo "<option value=".$key ." data-slug='".$blog[1] ."' >".$blog[0] ."</option>";
           }
+          */
         ?>
       </select>
     </div>
   </div>
+  -->
   <div class="code-wrapper code-field-wrapper">
      <div><label for="code" class="upme-field-type" ><span><?php _e('Codice d\'accesso','sage') ?></span> </label></div><div class="upme-field-value" ><input type="text" id="code"></div>
    </div>

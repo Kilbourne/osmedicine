@@ -48,11 +48,11 @@
               function validateCode(e) {
                 var target = $(e.target),
                     //fieldGroup = target.closest('.acf-fields'),
-                    subsiteField = $('#subsite'),
+                    //subsiteField = $('#subsite'),
                     //subsiteOptions = subsiteField.find('option'),
-                    subsite = subsiteField.val(),
-                    subsiteName = subsiteField.children('option:selected').data('slug'),
-                    subsiteName2 = subsiteField.children('option:selected').text(),
+                    //subsite = subsiteField.val(),
+                    //subsiteName = subsiteField.children('option:selected').data('slug'),
+                    //subsiteName2 = subsiteField.children('option:selected').text(),
                     codeField = $('#code'),
                     groupField=$('.insert-code-wrapper'),
                     code = codeField.val();
@@ -60,25 +60,27 @@
                     //acf.fields.repeater.o.max = subsiteOptions.length;
 
                     function removeOption(record) {
-                      if ($(this).text() === subsiteName2) { $(this).remove(); }
+                      //if ($(this).text() === subsiteName2) { $(this).remove(); }
                     }
                     $.post(
                       OSM.ajaxurl, {
                           action: 'validate_code',
-                          subsite_id: subsite,
-                          subsite: subsiteName,
+                          //subsite_id: subsite,
+                          //subsite: subsiteName,
                           code: code,
                           _nonce: OSM.nonce,
                       },
                       function(response) {
                         groupField.children('.response').remove();
                         target.removeClass('visible');
-                        subsiteField.add(target).attr('disabled', 'disabled');
+                        ///subsiteField.add(target)
+                        target.attr('disabled', 'disabled');
                         var data= !!response.data.data?response.data.data:response.data;
                         groupField.append('<div class="response">' + data + '</div>');
                         if (response.success) {
                             codeField.val('');
-                            var newAbilitation=$('<li class="last" ><span>'+subsiteName2+'</span> - <span> <a href="'+response.data.url+'"">Vai al sito</a> </span><li>');
+                            var subsiteName2 = response.data.name,
+                                newAbilitation=$('<li class="last" ><span>'+subsiteName2+'</span> - <span> <a href="'+response.data.url+'"">Vai al sito</a> </span><li>');
                             if(!$('.registered-areas').length){
                                 var registeredArea=$('<div class="registered-areas upme-profile-tab-panel"><h4 class="upme-separator">Sottoaree abilitate</h4><ul class="registered-areas-list"></ul></div>');
                                 registeredArea.hide();
@@ -88,13 +90,14 @@
                             }else{
                                 newAbilitation.removeClass('last').appendTo('.registered-areas-list')
                             }
-                            subsiteField.children('option').each(removeOption);
-                            if(!subsiteField.children('option').length){
-                                groupField.delay(1200).hide(1200).remove();
-                            }else{
+                            //subsiteField.children('option').each(removeOption);
+                            //if(!subsiteField.children('option').length){
+                              //  groupField.delay(1200).hide(1200).remove();
+                            //}else{
                                 groupField.children('.response').delay(1200).hide(1200).remove();
-                                subsiteField.add(target).removeAttr('disabled');
-                            }
+                                //subsiteField.add(target)
+                                target.removeAttr('disabled');
+                            //}
                         }
                       }
                   );
