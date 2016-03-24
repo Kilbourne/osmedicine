@@ -31,7 +31,9 @@
               var equal=function(){return equalizeHeight(['.other-post-list li .article-image-wrapper','.other-post-list li .article-content-wrapper .entry-title']);}
                   enquire.register("screen and (min-width:45em)", {
                     match : function() {
-                      equal();
+                                        $('main.main').imagesLoaded( function() {
+                  equal();
+                  });
                       $(window).smartresize(function(){equal();});
                     },
                     unmatch : function() {
@@ -109,7 +111,10 @@
               var equal=function(){return equalizeHeight(['.related-post-img-wrap']);}
               enquire.register("screen and (min-width:45em)", {
                 match : function() {
+                  $('main.main').imagesLoaded( function() {
                   equal();
+                  });
+                  
                   $(window).smartresize(function(){equal();});},
                 unmatch : function() {
                   $(window).off("smartresize", equal);
