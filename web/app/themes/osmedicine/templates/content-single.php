@@ -3,6 +3,9 @@
     <header>
       <?php get_template_part('templates/date-meta'); ?>
     </header>
+    <?php if(!!get_field('show_full_image') ){ ?>
+        <div class="full-image-wrap"><?php  the_post_thumbnail('full' ); ?></div>
+      <?php } ?>
     <div class="entry-content">
       <?php the_content(); ?>
     </div>

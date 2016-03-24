@@ -19,7 +19,7 @@
   margin-bottom: 0.75rem;
   height: auto;
 }
-@media (min-width: 451px) {
+@media (min-width: 487px) {
   // Only float if not on an extra small device
   .alignleft {
     float: left;
@@ -30,7 +30,7 @@
     margin-left: 0.75rem;
   }
 }
-@media (max-width: 450px) {
+@media (max-width: 486px) {
   // Only float if not on an extra small device
   .alignleft,.alignright {
     display:block;

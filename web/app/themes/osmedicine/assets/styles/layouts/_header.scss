@@ -496,7 +496,7 @@ transform: translate(-100%);
         justify-content: space-between;
         padding: 0 20px;
         @include media-query(palm) {
-            margin-top: calc(8.59vw + 1rem);
+            margin-top: 5.5rem;
         }
         @include media-query(palm) {
             flex-wrap: wrap;
@@ -527,7 +527,14 @@ transform: translate(-100%);
         color: #fff;
     }
 }
-
+body.single-post .wrap.container {
+    >.content.row {
+.main {
+@include media-query(lap-and-up) {
+             width:auto;
+             padding:0 10%
+            }
+        }}}
 .article-content-wrapper {
     display: inline-block;
     overflow: hidden;
@@ -783,7 +790,15 @@ body.single article {
             border: 1px solid;
             line-height: 1;
             font-size: 0.8rem;
+            >a{ white-space:nowrap;}
         }
+    }
+    .full-image-wrap{
+    	margin-bottom: 1.5rem;
+    	>img{
+			margin: 0px auto;
+			display: block;
+    	}
     }
     .post-pagination {
         overflow: hidden;
@@ -846,6 +861,7 @@ body.single article {
                 max-height: 120px;
                 img {
                     height: 100%;
+                    width:auto;
                 }
             }
         }
