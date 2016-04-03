@@ -77,11 +77,12 @@ add_filter('widget_text', 'do_shortcode');
 
 add_filter('wp_nav_menu',__NAMESPACE__ . '\\custom_menu', 10, 2);
 function custom_menu($nav_menu,$args){
-   if( !$args->theme_location == 'primary_navigation' ){
+   if(  ! $args->theme_location == 'primary_navigation' ){
       return $nav_menu.'<div class="right social">
         <span class="icon fb"></span><span class="icon twi"></span><span class="icon rss"></span>
       </div>';
    }
+   return $nav_menu;
 }
 add_filter('wp_nav_menu_items',__NAMESPACE__ . '\\add_search_box_to_menu', 10, 2);
 function add_search_box_to_menu( $items, $args ) {

@@ -10,7 +10,7 @@
         justify-content: space-between;
         padding: 0 20px;
         @include media-query(palm) {
-            margin-top: calc(8.59vw + 1rem);
+            margin-top: 5.5rem;
         }
         @include media-query(palm) {
             flex-wrap: wrap;

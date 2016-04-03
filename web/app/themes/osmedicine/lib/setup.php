@@ -95,6 +95,7 @@ $detect = new Mobile_Detect;
     // The sidebar will NOT be displayed if ANY of the following return true.
     // @link https://codex.wordpress.org/Conditional_Tags
     is_404(),
+    is_singular( 'post' ),
     //is_front_page(),
     is_page_template('template-custom.php'),
   ]);
@@ -112,6 +113,7 @@ $detect = new Mobile_Detect;
     // The sidebar will NOT be displayed if ANY of the following return true.
     // @link https://codex.wordpress.org/Conditional_Tags
     is_404(),
+    is_singular( 'post' ),
     //is_front_page(),
     is_page_template('template-custom.php'),
   ]);
