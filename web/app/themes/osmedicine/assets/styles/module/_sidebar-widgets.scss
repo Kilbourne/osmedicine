@@ -1,0 +1,167 @@
+aside {
+    .widget_siw_widget {
+        margin-bottom: 1.5rem;
+        display: inline-block;
+        position: relative;
+        left: 50%;
+        transform: translateX( -50%);
+        max-width: 100%;
+    }
+    .upme-login-widget {
+        margin-bottom: 1.5rem;
+        > h3 {
+            background-color: #00A99D;
+            color: #fff;
+            padding: .5% 3%;
+            margin-bottom: 1rem;
+        }
+        .upme-pic.mini_profile {
+            width: auto !important;
+        }
+        .upme-pic.mini_profile,
+        .upme-field-name {
+            display: inline-block;
+        }
+        .upme-field-name,
+        .upme-field-edit.upme-widget-profile-button {
+            margin-top: 0px !important;
+        }
+    }
+    .soliloquy {
+        >h3 {
+            background-color: rgb(199, 178, 153);
+            color: rgb(255, 255, 255);
+            padding: 0.5% 3%;
+        }
+        .soliloquy-container {
+            margin-top: .75rem !important;
+            & * {
+                line-height: normal;
+            }
+            .soliloquy-viewport {
+                height: auto !important;
+                .soliloquy-slides {
+                    .soliloquy-item {
+                        display: none !important;
+                        &.soliloquy-active-slide {
+                            display: block !important;
+                        }
+                    }
+                }
+            }
+            .soliloquy-control-nav.soliloquy-control-paging {
+                //bottom:0 !important;
+            }
+            .soliloquy-html-sentinel {
+                height: auto !important;
+                .soliloquy-html-content {
+                    position: static !important;
+                }
+            }
+        }
+        .soliloquy-pager {
+            margin: 1.5rem auto;
+            position: static !important;
+            .soliloquy-pager-link {
+                background-color: rgb(196, 196, 196);
+                border-radius: 50%;
+                background-image: none;
+                &:hover,
+                &.active,
+                &.active {
+                    background-color: #6B6B6B;
+                }
+            }
+        }
+        .image-wrap {
+            display: inline-block;
+            max-width: 100px;
+            float: left;
+            margin-right: 1rem;
+            >img {
+                height: auto;
+            }
+        }
+        .text-wrap {
+            font-size: 1rem;
+            p {
+                color: #999999;
+                font-size: .9rem
+            }
+            >h3 {
+                font-size: 1.2rem;
+            }
+        }
+    }
+    >.widget_text {
+        >h3 {
+            background-color: rgb(34, 181, 115);
+            color: rgb(255, 255, 255);
+            padding: 0.5% 3%;
+            margin-bottom: 1rem;
+        }
+        ul.wptabsy-nav.tabsy-nav.tabsy-desktop {
+            display: flex !important;
+            padding-top: 0 !important;
+            border-top: none !important;
+            margin-bottom: 1rem;
+            position: static !important;
+            >li {
+                flex-grow: 1 !important;
+                border: none !important;
+                >a {
+                    font-size: 1rem;
+                    padding: 4px 2.5%;
+                    letter-spacing: -1px;
+                    text-align: center;
+                    border: none !important;
+                    background: #DEDEDE !important;
+                    background-image: none !important;
+                    color: #999999 !important;
+                    height: 100% !important;
+                }
+                &.tabsy-active {
+                    a {
+                        background: #22b573 !important;
+                        color: #fff !important;
+                    }
+                }
+            }
+        }
+        .tabsy-nav.tabsy-mobile {
+            display: none !important;
+        }
+        .tabsy-container {
+            border: none !important;
+            .wptabsy-content.tabsy-content {
+                height: auto !important;
+                padding: 0 !important;
+                overflow: hidden;
+                .image-wrap {
+                    width: 100px;
+                    vertical-align: top;
+                    display: inline-block;
+                    margin-right: 1rem;
+                    float: left;
+                    >img {
+                        height: auto;
+                    }
+                }
+                .text-wrap {
+                    //display: inline-block;
+                    //width: calc(100% - 100px - 1rem);
+                    font-size: 0.9rem;
+                    padding: 0 7.5% 0 0;
+                    p {
+                        color: #999999;
+                        line-height: normal;
+                    }
+                    >h3 {
+                        font-size: 1rem;
+                        padding: 0px;
+                    }
+                }
+            }
+        }
+    }
+}

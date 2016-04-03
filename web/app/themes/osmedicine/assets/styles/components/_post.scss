@@ -1,0 +1,202 @@
+
+
+article {
+    width: 100%;
+    position: relative;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+
+time {
+    text-align: center;
+    display: inline-block;
+    padding: 0px 1%;
+    border: 1px solid;
+    margin-right: 1rem;
+    max-height: 76px;
+    background-color: rgb(38, 92, 131);
+    color: rgb(255, 255, 255);
+}
+
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.navigation.posts-navigation {
+    margin: 0 0 1rem;
+    .nav-links {
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 3%;
+        >div {
+            display: inline-block;
+        }
+    }
+}
+@media screen and (max-width: 600px) {
+    #wpadminbar {
+        position: fixed;
+    }
+}   
+
+.article-content-wrapper {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    >header {
+        h2,
+        h4 {
+            margin-bottom: 0.25rem;
+        }
+        .updated {
+            display: inline-block;
+        }
+        .author {
+            display: block;
+            margin-bottom: 4px;
+        }
+    }
+    time {
+        margin-bottom: 1rem;
+    }
+}
+
+.article-image-wrapper {
+    display: inline-block;
+    @media(min-width: 499.99px) {
+        width: 50%;
+        float: right;
+        margin-left: 1.5rem;
+    }
+    vertical-align: top;
+    >img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.other-post-list {
+    list-style: none;
+    margin-left: 0;
+    font-size: 0;
+    display: flex;
+    justify-content: space-between;
+    @include media-query(palm) {
+        flex-wrap: wrap;
+    }
+    li {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 1rem;
+        .article-image-wrapper {
+            width: 25%;
+            margin-right: 0.75rem;
+            @include media-query(palm) {
+                float: left;
+                margin-left: 0;
+            }
+            img {
+                display: inline-block;
+                height: 100%;
+                //transform: translateY(-100%);
+                //top: 100%;
+                //position: relative;
+            }
+        }
+        .article-content-wrapper,
+        .article-image-wrapper {
+            vertical-align: top;
+            display: inline-block;
+            @include media-query(lap-and-up) {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+        .article-content-wrapper {
+            @include media-query(palm) {
+                width: calc( 75% - .75rem);
+                overflow: visible;
+                display: inline
+            }
+        }
+    }
+    @include media-query(lap-and-up) {
+        &.length1 {
+            li {
+                width: 100%
+            }
+        }
+        &.length2 {
+            li {
+                width: calc( 50% - 10px);
+            }
+        }
+        &.length3 {
+            li {
+                width: calc( 33.333% - 13.333px);
+            }
+        }
+    }
+    h5 {
+        @include media-query(lap-and-up) {
+            margin-top: 1.5rem;
+        }
+        margin-bottom:0;
+        display:inline-block;
+        @include media-query(palm) {
+            display: inline;
+        }
+    }
+}
+
+.news {
+    h5 {
+        >a {
+            font-size: 1.128rem;
+            line-height: 1.222;
+        }
+    }
+}
+
+.news-cat-bg-color {
+    color: #fff;
+    >a {
+        color: #fff;
+    }
+}
+
+.hi-tech_medicine-cat-bg-color {
+    color: #fff;
+    >a {
+        color: #fff;
+    }
+}
+
+.research_science-cat-bg-color {
+    color: #fff;
+    >a {
+        color: #fff;
+    }
+}
+
+body.category,
+body.author {
+    h2 {
+        line-height: 1.2;
+    }
+    article {
+        margin: 0 0 1rem;
+        border-bottom: 1px solid #265C83;
+    }
+    h2 {
+        margin-bottom: 4px;
+    }
+    time {
+        margin-bottom: 0.5rem;
+    }
+}

@@ -1,0 +1,39 @@
+footer.content-info {
+    font-size: 0.75rem;
+    text-align: center;
+    background-color: rgb(249, 246, 246);
+    overflow: hidden;
+    padding: 10px 20px;
+    >.container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        text-align: left;
+        >div {
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+    p {
+        margin: 0
+    }
+    .info-rivista {
+        //float: left;
+        text-align: left;
+    }
+    .footer-menu {
+        >span {
+            margin-right: 5px;
+            padding-right: 5px;
+            border-right: 1px solid #000;
+        }
+        >span:last-child {
+            margin-right: 0;
+            padding-right: 0;
+            border-right: none;
+        }
+    }
+    .info-menthalia {
+        //float: right;
+    }
+}

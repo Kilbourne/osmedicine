@@ -4,3 +4,40 @@
     padding: 0;
     overflow:hidden;
 }
+.wrap.container {
+    >.content.row {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        @include media-query(palm) {
+            margin-top: calc(8.59vw + 1rem);
+        }
+        @include media-query(palm) {
+            flex-wrap: wrap;
+        }
+        .main {
+            width: 100%;
+            @include media-query(lap-and-up) {
+                width: 66.063%;
+            }
+            display: inline-block;
+            vertical-align: top;
+            p {
+                font-size: 1rem;
+                line-height: 1.58;
+                letter-spacing: -.003em;
+            }
+        }
+        .sidebar {
+            width: 100%;
+            @include media-query(lap-and-up) {
+                width: 31.1718%;
+            }
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+    .big-article-title {
+        color: #fff;
+    }
+}

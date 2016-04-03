@@ -1,6 +1,5 @@
 @import "settings/settings";
-@import "common/variables";
-@import "common/mixin";
+
 
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
@@ -48,13 +47,18 @@
 @import "common/page";
 //@import "components/buttons";
 @import "components/fonts";
-@import "components/comments";
-@import "components/forms";
-@import "components/grid";
+@import "components/font-face";
+@import "components/hover";
+@import "components/icons";
+@import "components/links";
+@import "components/menu";
+@import "components/post";
+@import "components/select";
 @import "components/wp-classes";
+@import "components/headings";
 @import "layouts/header";
-@import "layouts/sidebar";
 @import "layouts/footer";
-@import "layouts/pages";
-@import "layouts/posts";
 @import "layouts/tinymce";
+@import "module/restricted-area";
+@import "module/sidebar-widgets";
+@import "module/single-post";

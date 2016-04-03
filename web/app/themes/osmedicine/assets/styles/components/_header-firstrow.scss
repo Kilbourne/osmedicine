@@ -1,0 +1,60 @@
+.mast-head-firstrow {
+    background-color: rgb(127, 127, 127);
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    font-size: 0.7rem;
+    position: relative;
+    z-index: 99;
+    a {
+        color: #fff;
+        white-space: nowrap;
+    }
+    @include media-query(palm) {
+        display: none;
+    }
+    >.left,
+    >.right {
+        display: inline-block;
+    }
+    >.right.social {
+        position: absolute;
+        right: 20px;
+        top: 8px;
+    }
+    >.left {
+        display: inline-block;
+        min-width: 31%;
+        >span {
+            padding: 0 3%;
+            border-right: 1px solid;
+            &:last-child {
+                border-right: none;
+            }
+        }
+        .blog-list-wrap {
+            cursor: pointer;
+            position: relative;
+            padding-bottom: 30px;
+            white-space: nowrap;
+        }
+        .blog-list {
+            display: none;
+            margin: 0px;
+            list-style: outside none none;
+            position: absolute;
+            top: 20px;
+            background-color: rgb(255, 255, 255);
+            left: 9px;
+            >li {
+                padding: 2px 5%;
+            }
+            a {
+                color: rgb(0, 0, 0);
+                display: inline-block;
+            }
+        }
+        .blog-list-wrap:hover .blog-list {
+            display: inline-block;
+        }
+    }
+}

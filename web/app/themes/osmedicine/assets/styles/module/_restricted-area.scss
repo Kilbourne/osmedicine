@@ -1,0 +1,188 @@
+.custom-select {
+    @extend %custom-select;
+}
+
+.acf-fields,
+.acf-fields.-left {
+    > .acf-field.acf-field-select > .acf-input {
+        @extend %custom-select;
+    }
+}
+
+.upme-column-wrap {
+    overflow: hidden;
+}
+
+.subsite-invites-section {
+    border: 1px solid rgb(221, 221, 221);
+    box-shadow: 0px 1px 2px -1px rgb(204, 204, 204);
+    background-color: rgb(255, 255, 255);
+    margin-top: 1.5rem;
+    font-family: Open Sans, "Helvetica", "Arial";
+    >h3 {
+        background: rgb(245, 245, 245) none repeat scroll 0% 0%;
+        margin-bottom: 1.5rem;
+        line-height: 1;
+        padding: 2%;
+        font-size: 1.3rem;
+    }
+    >ul {
+        list-style: outside none none;
+    }
+    .acf-field[data-name="codici_accesso"] {
+        >.acf-label>label {
+            border-bottom: 1px solid #DBDBDB;
+            margin-bottom: 30px;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 0 0 10px 0;
+        }
+    }
+    td.acf-fields {
+        font-size: 0;
+        >.acf-field {
+            font-size: 13px;
+            display: inline-block;
+            vertical-align: top;
+            display: inline-flex;
+            justify-content: space-between;
+            >.acf-label {
+                display: inline-block;
+                vertical-align: top;
+                padding: 0.6rem 10% 0.5rem;
+            }
+            >.acf-input {
+                display: inline-block;
+                vertical-align: top;
+                margin-top: 0;
+                >select,
+                >input,
+                >button,
+                >.acf-input-wrap {
+                    padding: .6rem 0% .5rem
+                }
+            }
+            &[data-name="subsito"] {
+                width: 35%;
+                >.acf-input {
+                    padding: .3rem 0 .25rem;
+                    flex-grow: 1;
+                    &::after {
+                        top: 40%;
+                    }
+                    >select {
+                        border: 1px solid #aaaaaa;
+                        padding: .4rem 0 0.25rem;
+                    }
+                }
+            }
+            &[data-name="codice"] {
+                width: 50%;
+                >.acf-input {
+                    width: 100%;
+                }
+                .acf-input-wrap {
+                    padding: .3rem 0% .25rem
+                }
+            }
+            &[data-type="message"] {
+                padding: 19px 12px;
+                >.acf-label {
+                    display: none;
+                }
+            }
+        }
+    }
+    td.acf-row-handle {
+        display: none;
+    }
+    .acf-hl> .acf-table {
+        border-collapse: separate;
+    }
+}
+
+.code-field-wrapper {
+    margin-bottom: 1rem;
+    display: inline-block;
+    width: 100%;
+}
+
+.subsite-invites-section {
+    .button-wrapper,
+    .response {
+        display: inline-block;
+    }
+}
+
+.registered-areas-list {
+    list-style: none;
+    margin-left: 0;
+    >li>span {
+        margin-bottom: 0.5rem;
+        display: inline-block;
+    }
+}
+
+.code_check_button {
+    width: 78px;
+    position: relative;
+    box-sizing: content-box;
+    &::before {
+        content: '';
+        background-image: url(../images/loading.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 21px;
+        height: 21px;
+        top: 2px;
+        left: 5%;
+        position: absolute;
+        display: none;
+    }
+    &.visible {
+        padding-left: 16%;
+        &::before {
+            display: inline-block;
+        }
+    }
+}
+
+.insert-code-wrapper > .response {
+    >.success {
+        color: #2ECC71;
+        border: none !important;
+        &::before {
+            content: '';
+            background-image: url(../images/success.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 21px;
+            height: 21px;
+            vertical-align: text-top;
+            display: inline-block;
+            margin: 0 .5rem;
+        }
+    }
+    >.error {
+        color: #F31212;
+        border: none !important;
+        &::before {
+            content: '';
+            background-image: url(../images/error.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 21px;
+            height: 21px;
+            vertical-align: text-top;
+            display: inline-block;
+            margin: 0 .5rem;
+        }
+    }
+}
+
+.registered-areas {
+    >h4 {
+        margin-bottom: 1rem;
+    }
+}

@@ -1,0 +1,19 @@
+.icon::before {
+    content: '';
+    background-repeat: no-repeat;
+    width: 42px;
+    height: 37px;
+    display: inline-block;
+}
+
+.icon.fb::before {
+    background-image: url(../images/fb.png)
+}
+
+.icon.twi::before {
+    background-image: url(../images/twi.png)
+}
+
+.icon.rss::before {
+    background-image: url(../images/rss.png)
+}
