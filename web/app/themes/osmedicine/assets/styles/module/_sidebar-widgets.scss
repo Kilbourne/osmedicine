@@ -5,7 +5,11 @@ aside {
         position: relative;
         left: 50%;
         transform: translateX( -50%);
-        max-width: 100%;
+        width: 100%;
+        margin-bottom: 1.5rem;    
+    border: 1px solid #ddd;    
+    box-shadow: 0 1px 2px -1px #ccc;
+    
     }
     .upme-login-widget {
         margin-bottom: 1.5rem;
@@ -161,6 +165,57 @@ aside {
                         padding: 0px;
                     }
                 }
+            }
+        }
+    }
+}
+
+body.virology{
+    .widget_siw_widget{
+        >h3{
+            text-align: center;
+            font-size: 1.125rem;
+            margin: 1rem 0;
+            color:#0071BC;
+            padding: 0 8%;
+        }
+        > img {
+            max-width: 300px;
+            margin: 1rem auto;
+            display: block;
+        }
+    }
+    .widget_text{
+        margin-bottom: 1.5rem;
+        display: inline-block;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 100%;
+        border: 1px solid #ddd;        
+        box-shadow: 0 1px 2px -1px #ccc;
+        width: 100%;
+        background-color: #534741;
+        color: #fff;
+        .app-widget-content{
+            text-align: center;
+            margin-top: 1rem;
+            >p{
+                    font-size: 18px;
+                    margin-bottom: 0;
+            }
+            .buttons-app-wrapper{
+                    margin-top: 1rem;
+                    text-align: center;
+                    display: inline-block;
+                    width: 100%;
+                    >a{
+                        display: inline-block;
+                        width: 106px;
+                        height: 36px;
+                        background-repeat: no-repeat;
+                        margin-right: .75rem;
+                    }
             }
         }
     }

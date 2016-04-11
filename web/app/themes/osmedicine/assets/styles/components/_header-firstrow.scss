@@ -47,6 +47,7 @@
             left: 9px;
             >li {
                 padding: 2px 5%;
+                display: block;
             }
             a {
                 color: rgb(0, 0, 0);
@@ -54,7 +55,7 @@
             }
         }
         .blog-list-wrap:hover .blog-list {
-            display: inline-block;
+            display: inline;
         }
     }
 }

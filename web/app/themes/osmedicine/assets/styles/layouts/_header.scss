@@ -1,16 +1,20 @@
 .mast-head-secondrow {
-    position: relative;
+
     >a {
+        display: inline-block;
+        height: 100%;
+            position: relative;
+            @include media-query(palm) {
+            position: fixed;
+            z-index: 50;
+        }
         >img {
             width: 100%;
             height: auto;
             min-height: 4.25rem;
         }
-       }
-        @include media-query(palm) {
-            position: fixed;
-            z-index: 50;
-        }
+       
+
         >.icons-cont {
             position: absolute;
             height: 100%;
@@ -190,7 +194,7 @@ transform: translate(-100%);
         #responsive_menu_pro #responsive_menu_pro_search_input {
             box-sizing: border-box;
         }
-
+}
 }
 .nav-primary {
     position: relative;

@@ -15,7 +15,10 @@ function body_class($classes) {
       $classes[] = basename(get_permalink());
     }
   }
-
+  $current_blog_id = get_current_blog_id();
+  $blog_details = get_blog_details($current_blog_id);
+  $slug = str_replace('/','',$blog_details->path);
+  $classes[]=$slug;
   // Add class if sidebar is active
   if (Setup\display_sidebar()) {
     $classes[] = 'sidebar-primary';

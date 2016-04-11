@@ -12,7 +12,7 @@
         $blogs=get_blogs_of_user($current_id);        
         if(count($blogs)>0){ ?><span class="blog-list-wrap">AREE SPECIALISTICHE <ul class="blog-list">
           <?php foreach ($blogs as $key => $blog) {
-            
+
             if($blog->userblog_id !== get_current_blog_id()){
             ?> <li class="blog-list-element hvr-fade">
               <a href="<?php echo $blog->siteurl ; ?>" ><?php echo $blog->blogname ; ?></a>
@@ -24,12 +24,24 @@
         <span class="icon fb"></span><span class="icon twi"></span><span class="icon rss"></span>  
       </div>
     </div>
-    <div class="mast-head-secondrow"><a href="<?php echo get_home_url(); ?> "><img src="<?php   echo get_field('header_background','option');?>" alt=""></a><div class="left-icons-cont icons-cont"><svg class="left-icons" >
-  <use xlink:href="#lateralt_logo_3"></use>
-</svg></div><h1 class="header-title <?php if( get_field('header_trapeze','option') ) { echo 'trapeze';} ?>" style=" color:<?php echo get_field('title_color','option');   ?>; "><?php   echo get_field('header_title','option');?><span ><?php   echo get_field('header_subtitle','option');?></span></h1><?php do_shortcode('[responsive_menu_pro]
-' ); ?><div class="right-icons-cont icons-cont"><svg class="right-icons" >
-  <use xlink:href="#lateralt_logo_4"></use>
-</svg></div></div>  
+    <div class="mast-head-secondrow">
+      <a href="<?php echo get_home_url(); ?> ">
+        <img src="<?php   echo get_field('header_background','option');?>" alt="">
+        <div class="left-icons-cont icons-cont">
+          <svg class="left-icons" >
+            <use xlink:href="#lateralt_logo_3"></use>
+          </svg>
+        </div>
+        <h1 class="header-title <?php if( get_field('header_trapeze','option') ) { echo 'trapeze';} ?>" style=" color:<?php echo get_field('title_color','option');   ?>; "><?php   echo get_field('header_title','option');?><span ><?php   echo get_field('header_subtitle','option');?></span></h1><div>
+          <?php do_shortcode('[responsive_menu_pro]' ); ?>
+        </div>
+      </a>
+      <div class="right-icons-cont icons-cont">
+        <svg class="right-icons" >
+          <use xlink:href="#lateralt_logo_4"></use>
+        </svg>
+      </div>
+    </div>  
     <nav class="nav-primary">
       <?php
       if (has_nav_menu('primary_navigation')) :
