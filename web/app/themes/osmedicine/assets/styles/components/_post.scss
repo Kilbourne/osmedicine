@@ -8,7 +8,7 @@ article {
 }
 
 
-time {
+time,.page-header h1 {
     text-align: center;
     display: inline-block;
     padding: 0px 1%;
@@ -18,7 +18,10 @@ time {
     background-color: rgb(38, 92, 131);
     color: rgb(255, 255, 255);
 }
-
+.page-header h1{
+    display: block;
+    padding: 1%;
+}
 .screen-reader-text {
     clip: rect(1px, 1px, 1px, 1px);
     position: absolute !important;
