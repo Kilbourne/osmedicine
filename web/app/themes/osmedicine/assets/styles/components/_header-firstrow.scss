@@ -23,12 +23,21 @@
     }
     >.left {
         display: inline-block;
-        min-width: 31%;
         >span {
-            padding: 0 3%;
+
+          &::after{
+            content:'';
+            display:inline-block;
             border-right: 1px solid;
+            height:15px;
+            vertical-align: middle;
+            margin: 0 6px;
+
+            }
             &:last-child {
+              &::after{
                 border-right: none;
+              }
             }
         }
         .blog-list-wrap {
@@ -44,10 +53,14 @@
             position: absolute;
             top: 20px;
             background-color: rgb(255, 255, 255);
-            left: 9px;
+            left: 0;
             >li {
                 padding: 2px 5%;
                 display: block;
+                &.active{
+                  background-color: #86c9e9;
+                  a{color:#fff;}
+                }
             }
             a {
                 color: rgb(0, 0, 0);
@@ -55,7 +68,8 @@
             }
         }
         .blog-list-wrap:hover .blog-list {
-            display: inline;
+            display: inline-block;
+            white-space: normal;
         }
     }
 }

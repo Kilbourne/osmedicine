@@ -42,7 +42,7 @@ time {
     #wpadminbar {
         position: fixed;
     }
-}   
+}
 
 .article-content-wrapper {
     display: inline-block;
@@ -187,7 +187,8 @@ time {
 body.category,
 body.author {
     h2 {
-        line-height: 1.2;
+        line-height: 1;
+        font-size: 1.7rem;
     }
     article {
         margin: 0 0 1rem;
