@@ -1,7 +1,7 @@
 .allegati{
 	table{width:100%;}
 	td{ vertical-align: top; }
-	time{ font-size:2rem; margin-bottom:1rem; }
+	time{ font-size:2rem; margin-bottom:1rem;padding:0 10px; }
 	hr{
 margin: 2.5rem 0px;
 color: rgb(38, 92, 131);
@@ -16,11 +16,11 @@ color: rgb(38, 92, 131);
 		font-size:1.5rem;
 		color:#fff;
 		text-align: center;
-		padding: 2% 5%;
+		padding: 2% 5px;
 	}
 	.allegati-list {
 		font-size: 0;
-	
+
 		> div{
 			display:inline-block;
 			vertical-align:top;
