@@ -73,14 +73,41 @@ add_filter('widget_text', 'do_shortcode');
 
 
 
+function not_root($blog){
+          return $blog->userblog_id !==1;
+}
+
+
+add_filter('wp_nav_menu_items',__NAMESPACE__ . '\\custom_menu2', 10, 2);
+function custom_menu2($items, $args){
+   if(  ! $args->theme_location == 'primary_navigation' && is_user_logged_in () ){
+    $display='';
+        $current_id = get_current_user_id();
+        $blogs=get_blogs_of_user($current_id);
+        $blogs=array_filter($blogs, "not_root");
+          if(count($blogs)>0){
+            $display.='<li class=" menu-item menu-item-has-children blog-list-wrap"><span class="label" >AREE SPECIALISTICHE</span> <ul class="sub-menu blog-list">';
+             foreach ($blogs as $key => $blog) {
+              $active=$blog->userblog_id === get_current_blog_id()?'active':'';
+              $display.='<li class="blog-list-element menu-item  '.  $active .' " ><a href="'. $blog->siteurl.'" >'. $blog->blogname .'</a></li>';
+            }
+            $display.='</ul> </li>';
+            if(get_current_blog_id()!==1 ){
+              $display.='<li class=" menu-item" ><a href="'.network_site_url().'">OPEN SOURCE IN MEDICINE</a> </li>';
+
+
+        }}
+$items.=$display;
+}
 
 
 
-
+   return $items;
+}
 
 add_filter('wp_nav_menu',__NAMESPACE__ . '\\custom_menu', 10, 2);
 function custom_menu($nav_menu,$args){
-   if(  ! $args->theme_location == 'primary_navigation' ){
+   if(  ! $args->theme_location == 'primary_navigation' && get_current_blog_id()===1 ){
       return $nav_menu.'<div class="right social">
         <span class="icon fb"></span><span class="icon twi"></span><span class="icon rss"></span>
       </div>';
@@ -94,9 +121,9 @@ function add_search_box_to_menu( $items, $args ) {
     }else{
 
         if(!is_user_logged_in ()){
-          $items=$items.'<li class="hvr-fade menu-item"><a href="'. get_page_url_by_name('Login') .'">Login</a></li><li class="hvr-fade menu-item"><a href="'. get_page_url_by_name('Registrazione') .'">Registrati</a></li>';
+          $items=$items.'<li class=" menu-item"><a href="'. get_page_url_by_name('Login') .'">Login</a></li><li class=" menu-item"><a href="'. get_page_url_by_name('Registrazione') .'">Registrati</a></li>';
         }else{
-          $items=$items.'<li class="hvr-fade menu-item"><a href="'. get_page_url_by_name('Guarda profilo') .'">Profilo</a></li>';
+          $items=$items.'<li class=" menu-item"><a href="'. get_page_url_by_name('Guarda profilo') .'">Profilo</a></li>';
         }
     }
     return $items;

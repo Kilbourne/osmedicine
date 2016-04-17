@@ -26,9 +26,11 @@
         <?php
 
         }}} ?>
-      </div><div class="right social">
+      </div><?php
+        if(get_current_blog_id()===1 ){ ?><div class="right social">
         <span class="icon fb"></span><span class="icon twi"></span><span class="icon rss"></span>
       </div>
+      <?php } ?>
     </div>
     <div class="mast-head-secondrow">
     <?php   $display='<a href="'. get_home_url().'"><img src="'.get_field('header_background','option').'" alt=""><div class="left-icons-cont icons-cont"><svg class="left-icons" >
