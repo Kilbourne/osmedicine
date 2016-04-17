@@ -28,7 +28,7 @@
         // Home page
         'home': {
             init: function() {
-              var equal=function(){return equalizeHeight(['.other-post-list li .article-image-wrapper','.other-post-list li .article-content-wrapper .entry-title']);}
+              var equal=function(){return equalizeHeight(['.other-post-list li .article-image-wrapper','.other-post-list li .article-content-wrapper .entry-title']);};
                   enquire.register("screen and (min-width:45em)", {
                     match : function() {
                                         $('main.main').imagesLoaded( function() {
@@ -90,7 +90,7 @@
                                 newAbilitation.appendTo(registeredList);
                                 registeredArea.appendTo('.subsite-invites-section').show('slow');
                             }else{
-                                newAbilitation.removeClass('last').appendTo('.registered-areas-list')
+                                newAbilitation.removeClass('last').appendTo('.registered-areas-list');
                             }
                             //subsiteField.children('option').each(removeOption);
                             //if(!subsiteField.children('option').length){
@@ -108,13 +108,13 @@
         },
         'single_post': {
             init: function() {
-              var equal=function(){return equalizeHeight(['.related-post-img-wrap']);}
+              var equal=function(){return equalizeHeight(['.related-post-img-wrap']);};
               enquire.register("screen and (min-width:45em)", {
                 match : function() {
                   $('main.main').imagesLoaded( function() {
                   equal();
                   });
-                  
+
                   $(window).smartresize(function(){equal();});},
                 unmatch : function() {
                   $(window).off("smartresize", equal);
@@ -179,7 +179,7 @@
         };
     };
     jQuery.fn[cf] = function(fn){  return fn ? this.bind(of, debounce(fn)) : this.trigger(cf); };
-};
+}
     function equalizeHeight(selector){
       var n,l;
       for(n=0,l=selector.length;n<l;n++){
