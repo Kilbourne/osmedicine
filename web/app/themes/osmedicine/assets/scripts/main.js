@@ -84,7 +84,7 @@
                             var subsiteName2 = response.data.name,
                                 newAbilitation=$('<li class="last" ><span>'+subsiteName2+'</span> - <span> <a href="'+response.data.url+'"">Vai al sito</a> </span><li>');
                             if(!$('.registered-areas').length){
-                                var registeredArea=$('<div class="registered-areas upme-profile-tab-panel"><h4 class="upme-separator">Sottoaree abilitate</h4><ul class="registered-areas-list"></ul></div>');
+                                var registeredArea=$('<div class="registered-areas upme-profile-tab-panel"><h4 class="upme-separator">Aree specialistiche abilitate</h4><ul class="registered-areas-list"></ul></div>');
                                 registeredArea.hide();
                                 registeredList=registeredArea.children('.registered-areas-list');
                                 newAbilitation.appendTo(registeredList);
