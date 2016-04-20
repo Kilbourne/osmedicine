@@ -3,7 +3,7 @@
   <div class="container">
     <div class="mast-head-firstrow clearfix">
       <div class="left">
-        <span><a href="<?= Extras\get_page_url_by_name('Chi siamo') ?>">CHI SIAMO</a></span><span><a href="<?= Extras\get_page_url_by_name('Contatti') ?>">CONTATTI</a></span><?php if(!is_user_logged_in ()){ ?><span><a href="<?= Extras\get_page_url_by_name('Login') ?>">LOGIN</a></span><span><a href="<?= Extras\get_page_url_by_name('Registrazione') ?>">REGISTRATI</a></span><?php }else{ ?><span><a href="<?= Extras\get_page_url_by_name('Guarda profilo') ?>">PROFILO</a></span><?php
+        <span><a href="<?= Extras\get_page_url_by_name('Chi siamo') ?>">CHI SIAMO</a></span><span><a href="<?= Extras\get_page_url_by_name('Contatti') ?>">CONTATTI</a></span><?php if(!is_user_logged_in ()){ ?><span><a href="<?= Extras\get_page_url_by_name('Login') ?>">LOGIN</a></span><span><a href="<?= Extras\get_page_url_by_name('Registrazione') ?>">REGISTRATI</a></span><?php }else{ ?><span><a href="<?= Extras\get_page_url_by_name('Guarda profilo') ?>">PROFILO</a></span><span><a href="<?php echo wp_logout_url( "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]" ); ?>">LOGOUT</a></span><?php
         function not_root($blog){
           return $blog->userblog_id !==1;
         }
