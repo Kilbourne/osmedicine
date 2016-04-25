@@ -1,13 +1,33 @@
 {
   "dependencies": {
     "main.js": {
+      "vendor": [
+      "../../plugins/tabsy/assets/js/jquery.tabsy.js",
+      "../../plugins/juiz-social-post-sharer/js/juiz-social-post-sharer.js",
+      "../../plugins/soliloquy/assets/js/min/soliloquy-min.js",
+      "../../plugins/svg-support/js/min/svg-inline-min.js",
+      "../../plugins/responsive-menu/public/js/touch.js",
+      "../../plugins/upme/js/upme-fitvids.js",
+      "../../plugins/upme/admin/js/tinymce_language_strings.js",
+      "../../plugins/upme/js/upme-custom.js",
+      "../../plugins/tabsy/assets/js/wptabsy.js",
+      "../../plugins/responsive-menu-pro-data/js/responsive-menu-pro-1.js"
+      ],
       "files": [
         "scripts/main.js"
       ],
       "main": true
     },
     "main.css": {
+      "vendor":[
+        "../../plugins/tabsy/assets/css/tabsy.css",
+        "../../plugins/upme/css/upme.css",
+        "../../plugins/upme/styles/default.css",
+        "../../plugins/upme/css/upme-responsive.css",
+        "../../plugins/responsive-menu-pro-data/css/responsive-menu-pro-1.css"
+      ],
       "files": [
+        "styles/module/plugin.css",
         "styles/main.scss"
       ],
       "main": true
