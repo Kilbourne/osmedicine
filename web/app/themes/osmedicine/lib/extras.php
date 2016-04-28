@@ -326,4 +326,62 @@ function my_special_nav_class( $classes, $item ) {
 }
 
 add_filter( 'nav_menu_css_class', __NAMESPACE__ . '\\my_special_nav_class', 10, 2 );
+
+add_filter( 'rest_authentication_errors', function( $result ) {
+  if ( ! empty( $result ) ) {
+    return $result;
+  }
+  if ( ! is_user_logged_in() ) {
+    return new WP_Error( 'restx_logged_out', 'Sorry, you must be logged in to make a request.', array( 'status' => 401 ) );
+  }
+
+  return $result;
+});
+/*
+function is_user_logged_in_rootsite(){
+    switch_to_blog( 1 );
+    global $user;
+    $logged = is_user_logged_in() ? true : false;
+    restore_current_blog();
+    return $logged;
+}
+*/
+add_action( 'rest_api_init', __NAMESPACE__ . '\\slug_register_subsites' );
+function slug_register_subsites() {
+    register_rest_field( 'user',
+        'subsite',
+        array(
+            'get_callback'    => __NAMESPACE__ . '\\slug_get_subsites',
+            'update_callback' => null,
+            'schema'          => null,
+        )
+    );
+}
+
+/**
+ * Get the value of the "starship" field
+ *
+ * @param array $object Details of current post.
+ * @param string $field_name Name of field.
+ * @param WP_REST_Request $request Current request
+ *
+ * @return mixed
+ */
+function slug_get_subsites( $object, $field_name, $request ) {
+  $results=array();
+  $blogs_array=get_blogs_of_user($object[ 'id' ]);
+
+foreach ($blogs_array as $key => $blog) {
+
+$id=$blog->userblog_id;
+       $path=$blog->path;
+        $path_arr=explode( "/", $path );
+        $count=count($path_arr);
+        $slug = $path_arr[$count-2];
+ if($id!==1) $results[]=$slug;
+ }
+
+    return $results;
+
+}
 ?>
