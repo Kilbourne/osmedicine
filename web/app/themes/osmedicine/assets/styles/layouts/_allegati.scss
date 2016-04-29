@@ -1,7 +1,9 @@
 .allegati{
 	table{width:100%;}
 	td{ vertical-align: top; }
-	time{ font-size:2rem; margin-bottom:1rem;padding:0 10px; }
+	time{ font-size:2rem; display: block;
+margin: 0 auto 1rem;
+max-width: 100px;padding:0 10px; }
 	hr{
 margin: 2.5rem 0px;
 color: rgb(38, 92, 131);
@@ -20,7 +22,13 @@ color: rgb(38, 92, 131);
 	}
 	.allegati-list {
 		font-size: 0;
-
+		margin-left: 0;
+		>li{
+			display: inline-block;
+width: 50%;
+vertical-align: top;
+text-align: center;
+		}
 		> div{
 			display:inline-block;
 			vertical-align:top;
