@@ -52,6 +52,7 @@
     "wpackagist-plugin/widget-importer-exporter": "1.2.2",
     "wpackagist-plugin/export-categories": "1.0",
     "wpackagist-plugin/wordpress-importer": "0.6.1",
+    "wpackagist-plugin/download-manager": "2.8.95",
   
     "wpackagist-plugin/juiz-social-post-sharer": "1.4.2",
     "wpackagist-plugin/category-color": "1.2",
