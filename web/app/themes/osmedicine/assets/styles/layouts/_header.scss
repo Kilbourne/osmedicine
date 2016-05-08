@@ -7,7 +7,9 @@
         display: inline-block;
         height: 100%;
             position: relative;
-
+    @media print {
+      &::after{display:none;}
+    }
         >img {
             width: 100%;
             height: auto;
@@ -229,6 +231,9 @@ transform: translate(-100%);
     margin-bottom: 20px;
     @include media-query(palm) {
         display: none;
+    }
+    @media print {
+      display:none;
     }
 }
 

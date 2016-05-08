@@ -4,3 +4,13 @@ html{
 body {
     font-family: "osmedicine-serif-font";
 }
+@media print {
+    a[href]:after {
+        content: "";
+    }
+}
+.error404{
+  .main>.search-form{
+    padding: 1.5rem 0px;
+  }
+}

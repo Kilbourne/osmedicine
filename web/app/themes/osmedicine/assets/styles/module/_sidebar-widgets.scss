@@ -31,6 +31,12 @@ aside {
             margin-top: 0px !important;
         }
     }
+    .upme-login-register-link.upme-sidebar {
+    font-size: 13px;
+}
+button.upme-button, div.upme-widget-wrap a.upme-button, input.upme-button[type="button"], input.upme-button[type="submit"] {
+  background-color: #1391da;
+}
     .soliloquy {
         >h3 {
             background-color: rgb(199, 178, 153);

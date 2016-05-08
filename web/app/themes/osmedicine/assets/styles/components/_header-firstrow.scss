@@ -72,4 +72,7 @@
             white-space: normal;
         }
     }
+     @media print {
+      display:none;
+    }
 }

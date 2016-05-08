@@ -22,6 +22,7 @@
 @import "../../bower_components/inuit-box/_objects.box.scss";
 @import "../../bower_components/inuit-buttons/_objects.buttons.scss";
 @import "../../bower_components/inuit-layout/_objects.layout.scss";
+@import "../../bower_components/inuit-print/_trumps.print.scss";
 @import "../../bower_components/font-awesome/scss/font-awesome.scss";
 // endbower
 @import "settings/tools.aliases";
@@ -31,7 +32,7 @@
 @import "common/page";
 //@import "components/buttons";
 @import "components/fonts";
-@import "components/font-face";
+//@import "components/font-face";
 @import "components/hover";
 @import "components/icons";
 @import "components/links";
