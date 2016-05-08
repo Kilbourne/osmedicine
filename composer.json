@@ -59,6 +59,7 @@
     "wpackagist-plugin/easy-image-widget": "1.1.1",
     "wpackagist-plugin/no-category-base-wpml": "1.2",
     "wpackagist-plugin/tabsy": "1.3",
+    "wpackagist-plugin/regenerate-thumbnails": "2.2.6",
     "mobiledetect/mobiledetectlib": "^2.8"
   },  
   "require-dev": {
