@@ -18,6 +18,11 @@
       ],
       "main": true
     },
+    "defer.js":{
+      "files":[
+      "scripts/defer.js"
+      ]
+    },
     "main.css": {
       "vendor":[
         "../../plugins/tabsy/assets/css/tabsy.css",
