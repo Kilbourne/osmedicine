@@ -26,10 +26,13 @@
     "inuit-box": "latest",
     "inuit-buttons": "latest",
     "inuit-layout": "latest",
+    "inuit-print": "latest",
     "jquery": "~1.11.3",
     "font-awesome": "~4.5.0",
     "enquire": "~2.1.2",
     "fastclick": "~1.0.6",
-    "imagesloaded": "~4.1.0"
+    "imagesloaded": "~4.1.0",
+    "picturefill":"latest",
+    "svg4everybody":"latest"
   }
 }
