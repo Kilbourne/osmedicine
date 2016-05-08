@@ -5,6 +5,8 @@ namespace Roots\Sage\Extras;
 use Roots\Sage\Setup;
 use WP_Widget;
 use WP_Error;
+use stdClass;
+use Walker_Nav_Menu_Checklist;
 /**
  * Add <body> classes
  */
@@ -383,5 +385,96 @@ $id=$blog->userblog_id;
 
     return $results;
 
+}
+add_action('admin_head-nav-menus.php', __NAMESPACE__ . '\\wpclean_add_metabox_menu_posttype_archive');
+function wpclean_add_metabox_menu_posttype_archive() {
+add_meta_box('wpclean-metabox-nav-menu-posttype', 'Custom Post Type Archives', __NAMESPACE__ . '\\wpclean_metabox_menu_posttype_archive', 'nav-menus', 'side', 'default');
+}
+
+function wpclean_metabox_menu_posttype_archive() {
+$post_types = get_post_types(array('show_in_nav_menus' => true, 'has_archive' => true), 'object');
+
+if ($post_types) :
+    $items = array();
+    $loop_index = 999999;
+
+    foreach ($post_types as $post_type) {
+        $item = new stdClass();
+        $loop_index++;
+
+        $item->object_id = $loop_index;
+        $item->db_id = 0;
+        $item->object = 'post_type_' . $post_type->query_var;
+        $item->menu_item_parent = 0;
+        $item->type = 'custom';
+        $item->title = $post_type->labels->name;
+        $item->url = get_post_type_archive_link($post_type->query_var);
+        $item->target = '';
+        $item->attr_title = '';
+        $item->classes = array();
+        $item->xfn = '';
+
+        $items[] = $item;
+    }
+
+    $walker = new Walker_Nav_Menu_Checklist(array());
+
+    echo '<div id="posttype-archive" class="posttypediv">';
+    echo '<div id="tabs-panel-posttype-archive" class="tabs-panel tabs-panel-active">';
+    echo '<ul id="posttype-archive-checklist" class="categorychecklist form-no-clear">';
+    echo walk_nav_menu_tree(array_map('wp_setup_nav_menu_item', $items), 0, (object) array('walker' => $walker));
+    echo '</ul>';
+    echo '</div>';
+    echo '</div>';
+
+    echo '<p class="button-controls">';
+    echo '<span class="add-to-menu">';
+    echo '<input type="submit"' . disabled(1, 0) . ' class="button-secondary submit-add-to-menu right" value="' . __('Add to Menu', 'andromedamedia') . '" name="add-posttype-archive-menu-item" id="submit-posttype-archive" />';
+    echo '<span class="spinner"></span>';
+    echo '</span>';
+    echo '</p>';
+
+endif;
+}
+add_action( 'transition_post_status', __NAMESPACE__ . '\\wpse118970_post_status_new', 10, 3 );
+function wpse118970_post_status_new( $new_status, $old_status, $post ) {
+    $post_types=array('allegati','wpdmpro');
+    if ( in_array($post->post_type, $post_types)  && $new_status == 'publish' && $old_status  != $new_status ) {
+        $post->post_status = 'private';
+        wp_update_post( $post );
+    }
+}
+add_action( 'post_submitbox_misc_actions' , __NAMESPACE__ . '\\wpse118970_change_visibility_metabox' );
+function wpse118970_change_visibility_metabox(){
+  global $post;
+    $post_types=array('allegati','wpdmpro');
+    if (! in_array($post->post_type, $post_types))
+        return;
+        $message = __('<strong>Nota:</strong> Gli '. $post->post_type .' pubblicati sono sempre <strong>privati</strong>.');
+        $post->post_password = '';
+        $visibility = 'private';
+        $visibility_trans = __('Private');
+    ?>
+    <style type="text/css">
+        .priv_pt_note {
+            background-color: lightgreen;
+            border: 1px solid green;
+            border-radius: 2px;
+            margin: 4px;
+            padding: 4px;
+        }
+    </style>
+    <script type="text/javascript">
+        (function($){
+            try {
+                $('#post-visibility-display').text('<?php echo $visibility_trans; ?>');
+                $('#hidden-post-visibility').val('<?php echo $visibility; ?>');
+            } catch(err){}
+        }) (jQuery);
+    </script>
+    <div class="priv_pt_note">
+        <?php echo $message; ?>
+    </div>
+    <?php
 }
 ?>
