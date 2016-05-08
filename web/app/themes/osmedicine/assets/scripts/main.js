@@ -19,7 +19,7 @@
         'common': {
             init: function() {
               deBouncer($,'smartresize', 'resize', 50);
-
+              svg4everybody();
             },
             finalize: function() {
               setTimeout(function(){$('.hvr-sweep-to-right').addClass('animate');},200);

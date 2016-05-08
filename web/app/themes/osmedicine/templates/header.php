@@ -28,17 +28,18 @@
         }}} ?>
       </div><?php
         if(get_current_blog_id()===1 ){ ?><div class="right social">
-        <span class="icon fb"></span><span class="icon twi"></span><span class="icon rss"></span>
+        <span class="icon fb"></span><span class="icon twi"></span><a href="<?php bloginfo('rss2_url'); ?>"><span class="icon rss">
+</span></a>
       </div>
       <?php } ?>
     </div>
     <div class="mast-head-secondrow">
     <?php   $display='<a href="'. get_home_url().'"><img src="'.get_field('header_background','option').'" alt=""><div class="left-icons-cont icons-cont"><svg class="left-icons" >
-  <use xlink:href="#lateralt_logo_3"></use>
+  <use xlink:href="'.get_stylesheet_directory_uri().'/dist/images/svg-def.svg#lateralt_logo_3"></use>
 </svg></div><h1 class="header-title';
 if( get_field('header_trapeze','option') ) { $display.= ' trapeze';}
 $display.='" style=\' color:'.get_field('title_color','option').'; \'>'.get_field('header_title','option').'<span >'.get_field('header_subtitle','option').'</span></h1>'.do_shortcode('[responsive_menu_pro]' ).'<div class="right-icons-cont icons-cont"><svg class="right-icons" >
-  <use xlink:href="#lateralt_logo_4"></use>
+  <use xlink:href="'.get_stylesheet_directory_uri().'/dist/images/svg-def.svg#lateralt_logo_4"></use>
 </svg></div></a>'; echo $display;?>
 </div>
     <nav class="nav-primary">
