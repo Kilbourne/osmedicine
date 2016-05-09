@@ -13,7 +13,7 @@ web/app/updraft/*
 # WordPress
 web/wp
 web/.htaccess
-
+.htaccess
 # WP-CLI
 db-sync
 sql-dump-*.sql
