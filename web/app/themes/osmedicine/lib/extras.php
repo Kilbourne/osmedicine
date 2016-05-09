@@ -438,7 +438,7 @@ endif;
 }
 add_action( 'transition_post_status', __NAMESPACE__ . '\\wpse118970_post_status_new', 10, 3 );
 function wpse118970_post_status_new( $new_status, $old_status, $post ) {
-    $post_types=array('allegati','wpdmpro');
+    $post_types=array('allegati');
     if ( in_array($post->post_type, $post_types)  && $new_status == 'publish' && $old_status  != $new_status ) {
         $post->post_status = 'private';
         wp_update_post( $post );
@@ -447,7 +447,7 @@ function wpse118970_post_status_new( $new_status, $old_status, $post ) {
 add_action( 'post_submitbox_misc_actions' , __NAMESPACE__ . '\\wpse118970_change_visibility_metabox' );
 function wpse118970_change_visibility_metabox(){
   global $post;
-    $post_types=array('allegati','wpdmpro');
+    $post_types=array('allegati');
     if (! in_array($post->post_type, $post_types))
         return;
         $message = __('<strong>Nota:</strong> Gli '. $post->post_type .' pubblicati sono sempre <strong>privati</strong>.');
