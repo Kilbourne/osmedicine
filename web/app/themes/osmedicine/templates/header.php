@@ -28,7 +28,7 @@
         }}} ?>
       </div><?php
         if(get_current_blog_id()===1 ){ ?><div class="right social">
-        <span class="icon fb"></span><span class="icon twi"></span><a href="<?php bloginfo('rss2_url'); ?>"><span class="icon rss">
+        <a href="https://www.facebook.com/Open-Source-in-Medicine-1280272665320711/"><span class="icon fb"></span></a><a href="https://twitter.com/OS_Medicine"><span class="icon twi"></span></a><a href="<?php bloginfo('rss2_url'); ?>"><span class="icon rss">
 </span></a>
       </div>
       <?php } ?>
