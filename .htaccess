@@ -1,7 +1,0 @@
-
-# Turn mod_rewrite on
-RewriteEngine On
-
-
-RewriteCond %{REQUEST_URI} !/osmedicine/web/
-RewriteRule (.*) /osmedicine/web/$1 [L]
