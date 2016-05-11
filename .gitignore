@@ -11,6 +11,7 @@ staging
 web/app/plugins.zip
 web/app/themes/osmedicine/dist.zip
 web/app/uploads/wp-migrate-db
+web/app/uploads/download-manager-files
 web/php_errorlog
 web/app/ewww
 #web/app/uploads/*
