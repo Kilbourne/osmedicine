@@ -14,14 +14,14 @@
   </div>
   <?php 
   if(get_current_blog_id() === 1){
-    $analytics_code='UA-77520161-1';
+    $analytics_code="UA-77520161-1";
   }elseif(get_bloginfo( 'name' )==="Open Source in Virology" ){
-    $analytics_code='UA-77531534-1';
+    $analytics_code="UA-77531534-1";
   }
    ?>
   <script>
 window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', <?php echo $analytics_code; ?>, 'auto');
+ga('create', '<?php echo $analytics_code; ?>', 'auto');
 ga('send', 'pageview');
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>

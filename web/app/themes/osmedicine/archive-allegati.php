@@ -24,9 +24,8 @@ $link = $wp_rewrite->get_year_permastruct();
   wp_redirect( $link ); exit;
 }else{
 $year=get_query_var('year')==0?date('Y'):get_query_var('year');
-
-  echo '<p class="allegati-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-  <section class="allegati-wrapper">
+$intro=get_field('desc_intro','option')?get_field('desc_intro','option'):'';
+  echo $intro.'<section class="allegati-wrapper">
 
 
 
