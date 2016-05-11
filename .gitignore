@@ -9,6 +9,7 @@ web/app/mu-plugins/*
 web/app/upgrade
 staging
 web/app/plugins.zip
+web/app/themes/osmedicine/dist.zip
 web/app/uploads/wp-migrate-db
 web/php_errorlog
 web/app/ewww
