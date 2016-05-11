@@ -7,6 +7,11 @@ web/app/mu-plugins/*
 !web/app/mu-plugins/login-redirect-hack.php
 !web/app/mu-plugins/register-theme-directory.php
 web/app/upgrade
+staging
+web/app/plugins.zip
+web/app/uploads/wp-migrate-db
+web/php_errorlog
+web/app/ewww
 #web/app/uploads/*
 !web/app/uploads/.gitkeep
 web/app/updraft/*
