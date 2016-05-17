@@ -6,7 +6,7 @@
 ('d'); ?></span><span class="month"><?= get_the_date('M Y'); ?></span> </time>
 <h1 class="entry-title"><?php the_title(); ?></h1>
 <div class="single-title-wrap">
-<p class="byline author vcard" ><?= __('Di', 'sage'); ?> <a href="<?= get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn"><?= get_the_author(); ?></a></p>
+<p class="byline author vcard" ><a href="<?= get_author_posts_url(get_the_author_meta('ID')); ?>" rel="author" class="fn"><?= get_the_author(); ?></a></p>
       <?php 
 
 

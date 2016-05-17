@@ -131,7 +131,7 @@ function assets() {
   if (is_single() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
   }
-  wp_enqueue_script( 'defer', Assets\asset_path('scripts/defer.js'), [], null, false );
+  
   wp_enqueue_script('sage-js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
   wp_localize_script( 'sage-js', 'OSM', array(
         'ajaxurl'   => admin_url( 'admin-ajax.php' ),
@@ -150,11 +150,15 @@ wp_localize_script(
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
 
+add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets1', 1);
+function assets1() {
+  wp_enqueue_script( 'defer', Assets\asset_path('scripts/defer.js'), [], null, false );
+  }
 function js_async_attr($tag){
 
     # Do not add async to these scripts
     $scripts_to_exclude = array('jquery','mediaelement-and-player','query-monitor');
-    $scripts_to_include = array('dist/scripts/main','defer','wp-embed');
+    $scripts_to_include = array('dist/scripts/main','wp-embed');
     foreach($scripts_to_exclude as $exclude_script){
         if(true == strpos($tag, $exclude_script ) )
         return $tag;
