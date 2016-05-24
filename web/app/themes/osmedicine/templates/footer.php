@@ -3,7 +3,7 @@
   <div class="container">
     <?php //dynamic_sidebar('sidebar-footer'); ?>
     	<div class="info-rivista">     		
-     		<p>Testata giornalistica in attesa di registrazione presso il Tribunale di Napoli (R.G. 2732/16)</p>
+     		<p>Testata giornalistica registrata presso Tribunale di Napoli - Aut. n°32 del 18/05/2016</p>
      	</div>
      	<div class="footer-menu">
             <span><a href="<?= Extras\get_page_url_by_name('Chi siamo') ?>">Chi siamo</a></span><span><a href="<?= Extras\get_page_url_by_name('Contatti') ?>">Contatti</a></span><?php if(!is_user_logged_in ()){ ?><span><a href="<?= Extras\get_page_url_by_name('Login') ?>">Login</a></span><span><a href="<?= Extras\get_page_url_by_name('Registrazione') ?>">Registrati</a></span><?php }else{ ?><span><a href="<?= Extras\get_page_url_by_name('Guarda profilo') ?>">Profilo</a></span><?php } ?> <span><a href="<?= Extras\get_page_url_by_name('Privacy Policy') ?>">Privacy Policy</a></span><span><a href="<?= Extras\get_page_url_by_name('Termini e Condizioni') ?>">Termini e Condizioni</a></span>
