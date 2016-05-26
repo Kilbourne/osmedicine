@@ -200,6 +200,7 @@ $user_info=get_userdata( $current_user_id );
   } else {
 
     $baweic_options['codes'][$subsite][ $code ]['leftcount']--;
+    $baweic_options['codes'][$subsite][ $code ]['hold']=false;
     $baweic_options['codes'][$subsite][ $code ]['users'][] =  $user_info->user_login;
     update_option( 'baweic_options', $baweic_options );
 
