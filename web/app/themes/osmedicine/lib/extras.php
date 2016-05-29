@@ -200,7 +200,6 @@ $user_info=get_userdata( $current_user_id );
   } else {
 
     $baweic_options['codes'][$subsite][ $code ]['leftcount']--;
-    $baweic_options['codes'][$subsite][ $code ]['hold']=false;
     $baweic_options['codes'][$subsite][ $code ]['users'][] =  $user_info->user_login;
     update_option( 'baweic_options', $baweic_options );
 
@@ -478,4 +477,10 @@ function wpse118970_change_visibility_metabox(){
     </div>
     <?php
 }
+
+
+function post_published_notification( $ID, $post ) {
+$response = wp_remote_get( 'https://appslandingit.serversicuro.it/Menthalia/OSVirology/push_sviluppo.php' );
+}
+add_action( 'publish_allegati', __NAMESPACE__ . '\\post_published_notification', 10, 2 );
 ?>
