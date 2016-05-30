@@ -436,6 +436,7 @@ if ($post_types) :
 
 endif;
 }
+/*
 add_action( 'transition_post_status', __NAMESPACE__ . '\\wpse118970_post_status_new', 10, 3 );
 function wpse118970_post_status_new( $new_status, $old_status, $post ) {
     $post_types=array('allegati');
@@ -477,7 +478,7 @@ function wpse118970_change_visibility_metabox(){
     </div>
     <?php
 }
-
+*/
 
 function post_published_notification( $ID, $post ) {
 $response = wp_remote_get( 'https://appslandingit.serversicuro.it/Menthalia/OSVirology/push_sviluppo.php' );
