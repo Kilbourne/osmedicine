@@ -2,10 +2,7 @@
 use Roots\Sage\Extras;
 use Roots\Sage\Setup;
 get_template_part('templates/page', 'header');
-$user = new WP_User( 28 );
-echo var_dump($user);
- $user_info = get_user_meta(28);
- echo var_dump($user_info); ?>
+ ?>
 
 <?php if (!have_posts()) { ?>
   <div class="alert alert-warning">
