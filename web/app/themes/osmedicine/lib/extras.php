@@ -483,5 +483,14 @@ function wpse118970_change_visibility_metabox(){
 function post_published_notification( $ID, $post ) {
 $response = wp_remote_get( 'https://appslandingit.serversicuro.it/Menthalia/OSVirology/push_sviluppo.php' );
 }
-add_action( 'publish_allegati', __NAMESPACE__ . '\\post_published_notification', 10, 2 );
+add_action( 'publish_allegati', __NAMESPACE__ . '\\post_published_notification', 10, 3 );
+
+    // define the add_user_to_blog callback 
+    function action_add_user_to_blog( $user_id, $role, $blog_id ) { 
+        wp_new_user_notification ( $user_id, null, 'both' )
+    }; 
+             
+    // add the action 
+    add_action( 'add_user_to_blog', __NAMESPACE__ . '\\action_add_user_to_blog', 10, 3 ); 
+
 ?>
