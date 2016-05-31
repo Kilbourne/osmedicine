@@ -47,7 +47,7 @@ if (have_posts()) :
                 $file=get_field('file_allegato',$allegato_id)?get_field('file_allegato',$allegato_id):false;
               ?>
                 <li>
-                <div><a href=" <?php  echo $file.'&masterkey=zYvirology16' ; ?> "><h5><?php   echo get_the_title( $allegato_id ); ?>  </h5><?php echo get_the_post_thumbnail( $allegato_id ); ?></a></div>
+                <div><a href=" <?php  echo $file ; ?> "><h5><?php   echo get_the_title( $allegato_id ); ?>  </h5><?php echo get_the_post_thumbnail( $allegato_id ); ?></a></div>
                  </li>
 <?php endwhile; ?>
 
