@@ -480,23 +480,26 @@ function wpse118970_change_visibility_metabox(){
 }
 */
 
-function post_published_notification( $ID, $post ) {
-$response = wp_remote_get( 'https://appslandingit.serversicuro.it/Menthalia/OSVirology/push_sviluppo.php' );
+function post_published_notification( $new_status, $old_status, $post ) {
+  $post_statuses=Array('new','pending','draft','future','private');
+  if (  in_array( $old_status, $post_statuses )  &&  $new_status == 'publish'  && get_post_type( $post ) == 'allegati') {
+        $response = wp_remote_get( 'https://appslandingit.serversicuro.it/Menthalia/OSVirology/push_sviluppo.php' );
+  }
 }
-add_action( 'publish_allegati', __NAMESPACE__ . '\\post_published_notification', 99, 2 );
+add_action( 'transition_post_status', __NAMESPACE__ . '\\post_published_notification', 99, 3 );
 /*
 
 
-    // define the add_user_to_blog callback 
+    // define the add_user_to_blog callback
     function action_add_user_to_blog( $user_id, $role, $blog_id ) {
       switch_to_blog($blog_id);
-    $user = get_userdata( $user_id ); 
+    $user = get_userdata( $user_id );
       wp_mail ( $user->user_email, 'aaa', 'aaa');
         wp_new_user_notification ( $user_id, null, 'both' );
         restore_current_blog();
-    }; 
-             
-    // add the action 
-    add_action( 'add_user_to_blog', __NAMESPACE__ . '\\action_add_user_to_blog', 10, 3 ); 
+    };
+
+    // add the action
+    add_action( 'add_user_to_blog', __NAMESPACE__ . '\\action_add_user_to_blog', 10, 3 );
 */
 ?>
