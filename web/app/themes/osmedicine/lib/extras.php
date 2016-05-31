@@ -486,8 +486,12 @@ $response = wp_remote_get( 'https://appslandingit.serversicuro.it/Menthalia/OSVi
 add_action( 'publish_allegati', __NAMESPACE__ . '\\post_published_notification', 10, 3 );
 
     // define the add_user_to_blog callback 
-    function action_add_user_to_blog( $user_id, $role, $blog_id ) { 
+    function action_add_user_to_blog( $user_id, $role, $blog_id ) {
+      switch_to_blog($blog_id);
+    $user = get_userdata( $user_id ); 
+      wp_mail ( $user->user_email, 'aaa', 'aaa');
         wp_new_user_notification ( $user_id, null, 'both' );
+        restore_current_blog();
     }; 
              
     // add the action 
