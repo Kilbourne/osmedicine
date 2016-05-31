@@ -1,7 +1,9 @@
 <?php 
 use Roots\Sage\Extras;
 use Roots\Sage\Setup;
-get_template_part('templates/page', 'header'); ?>
+get_template_part('templates/page', 'header');
+$user = new WP_User( 28 );
+echo var_dump($user;) ?>
 
 <?php if (!have_posts()) { ?>
   <div class="alert alert-warning">
