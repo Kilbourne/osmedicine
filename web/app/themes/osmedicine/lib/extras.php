@@ -483,7 +483,7 @@ function wpse118970_change_visibility_metabox(){
 function post_published_notification( $ID, $post ) {
 $response = wp_remote_get( 'https://appslandingit.serversicuro.it/Menthalia/OSVirology/push_sviluppo.php' );
 }
-add_action( 'publish_allegati', __NAMESPACE__ . '\\post_published_notification', 10, 3 );
+add_action( 'publish_allegati', __NAMESPACE__ . '\\post_published_notification', 99, 2 );
 /*
 
 
