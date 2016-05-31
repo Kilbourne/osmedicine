@@ -487,7 +487,7 @@ add_action( 'publish_allegati', __NAMESPACE__ . '\\post_published_notification',
 
     // define the add_user_to_blog callback 
     function action_add_user_to_blog( $user_id, $role, $blog_id ) { 
-        wp_new_user_notification ( $user_id, null, 'both' )
+        wp_new_user_notification ( $user_id, null, 'both' );
     }; 
              
     // add the action 
