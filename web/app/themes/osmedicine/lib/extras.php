@@ -483,8 +483,7 @@ function wpse118970_change_visibility_metabox(){
 function post_published_notification( $new_status, $old_status, $post ) {
   $post_statuses=Array('new','pending','draft','future','private');
   if (  in_array( $old_status, $post_statuses )  &&  $new_status == 'publish'  && get_post_type( $post ) == 'allegati') {
-    // https://appslandingit.serversicuro.it/Menthalia/OSVirology/push_production.php
-        $response = wp_remote_get( 'https://appslandingit.serversicuro.it/Menthalia/OSVirology/push_sviluppo.php' );
+        $response = wp_remote_get( 'https://appslandingit.serversicuro.it/Menthalia/OSVirology/push_production.php' );
   }
 }
 add_action( 'transition_post_status', __NAMESPACE__ . '\\post_published_notification', 99, 3 );
