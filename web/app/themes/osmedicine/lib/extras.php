@@ -21,6 +21,7 @@ function body_class($classes) {
   $blog_details = get_blog_details($current_blog_id);
   $slug = str_replace('/','',$blog_details->path);
   $classes[]=$slug;
+  if($current_blog_id !== 1)$classes[]='subsite';
   // Add class if sidebar is active
   if (Setup\display_sidebar()) {
     $classes[] = 'sidebar-primary';
@@ -481,8 +482,11 @@ function wpse118970_change_visibility_metabox(){
 */
 
 function post_published_notification( $new_status, $old_status, $post ) {
+    $current_blog_id = get_current_blog_id();
+  $blog_details = get_blog_details($current_blog_id);
+  $slug = str_replace('/','',$blog_details->path);
   $post_statuses=Array('new','pending','draft','future','private');
-  if (  in_array( $old_status, $post_statuses )  &&  $new_status == 'publish'  && get_post_type( $post ) == 'allegati') {
+  if (  in_array( $old_status, $post_statuses )  &&  $new_status == 'publish'  && get_post_type( $post ) == 'allegati' && $slug== 'virology') {
         $response = wp_remote_get( 'https://appslandingit.serversicuro.it/Menthalia/OSVirology/push_production.php' );
   }
 }
