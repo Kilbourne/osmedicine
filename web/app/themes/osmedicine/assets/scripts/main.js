@@ -44,7 +44,7 @@
 
             }
         },
-        'page_template_profile_page': {
+        'profile': {
           init: function() {
             $('.code_check_button').click(validateCode);
               function validateCode(e) {
