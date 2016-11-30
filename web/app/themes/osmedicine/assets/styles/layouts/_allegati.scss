@@ -1,70 +1,78 @@
-.post-type-archive-allegati{
-	table{width:100%;}
-	td{ vertical-align: top; }
-	time{ font-size:2rem; display: block;
-margin: 0 auto 1rem;
-max-width: 100px;padding:0 10px; }
-	hr{
-margin: 2.5rem 0px;
-color: rgb(38, 92, 131);
-	}
-	.year-row > td {
-		margin-bottom:1rem;
-		> td {
-			margin-bottom:1rem;
-		}
-	}
-  .years-list-wrapper{
-    border-top: 1px solid rgb(38, 92, 131);
-    border-bottom: 1px solid rgb(38, 92, 131);
-    margin-bottom: 1rem;
-    .years-list{
-    margin: 0px;
-    padding: 5px 0px;
-      >li{
-      display: inline-block;
-      list-style: none;
-      margin-right: 10px;
-      }
+.post-type-archive-allegati {
+    table {
+        width: 100%;
     }
-  }
-	.allegato_category{
-		font-size:1.5rem;
-		color:#fff;
-		text-align: center;
-		padding: 2% 5px;
-	}
-	.allegati-list {
-		font-size: 0;
-		margin-left: 0;
-		>li{
-			display: inline-block;
-width: 50%;
-vertical-align: top;
-text-align: center;
-		}
-		> div{
-			display:inline-block;
-			vertical-align:top;
-			width:100%;
-			font-size: 1rem;
-			@include media-query(lap-and-up){
-				width:50%;
-			}
-			>a{
-				display:inline-block;
-				vertical-align:top;
-				width:100%;
-				>h5{
-					margin-bottom: .75rem;
-					text-align: center;
-				}
-				>img{
-					margin: 0px auto;
-					display: block;
-					max-width:100%;
-				}
-			}
-		}
-	}
+    td {
+        vertical-align: top;
+    }
+    time {
+        font-size: 2rem;
+        display: block;
+        margin: 0 auto 1rem;
+        max-width: 100px;
+        padding: 0 10px;
+    }
+    hr {
+        margin: 2.5rem 0px;
+        color: rgb(38, 92, 131);
+    }
+    .year-row > td {
+        margin-bottom: 1rem;
+        > td {
+            margin-bottom: 1rem;
+        }
+    }
+    .years-list-wrapper {
+        border-top: 1px solid rgb(38, 92, 131);
+        border-bottom: 1px solid rgb(38, 92, 131);
+        margin-bottom: 1rem;
+        .years-list {
+            margin: 0px;
+            padding: 5px 0px;
+            >li {
+                display: inline-block;
+                list-style: none;
+                margin-right: 10px;
+            }
+        }
+    }
+    .allegato_category {
+        font-size: 1.5rem;
+        color: #fff;
+        text-align: center;
+        padding: 2% 5px;
+    }
+    .allegati-list {
+        font-size: 0;
+        margin-left: 0;
+        >li {
+            display: inline-block;
+            width: 50%;
+            vertical-align: top;
+            text-align: center;
+        }
+        > div {
+            display: inline-block;
+            vertical-align: top;
+            width: 100%;
+            font-size: 1rem;
+            @include media-query(lap-and-up) {
+                width: 50%;
+            }
+            >a {
+                display: inline-block;
+                vertical-align: top;
+                width: 100%;
+                >h5 {
+                    margin: .75rem 0;
+                    text-align: center;
+                }
+                >img {
+                    margin: 0px auto;
+                    display: block;
+                    max-width: 100%;
+                }
+            }
+        }
+    }
 }
