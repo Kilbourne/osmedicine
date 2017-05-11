@@ -1,11 +1,13 @@
 body.single-post .wrap.container {
     >.content.row {
-.main {
-@include media-query(lap-and-up) {
-             width:100%;
-             padding:0 10%
+        .main {
+            @include media-query(lap-and-up) {
+                width: 100%;
+                padding: 0 10%
             }
-        }}}
+        }
+    }
+}
 
 body.single article {
     margin: 0;
@@ -61,6 +63,7 @@ body.single article {
             display: inline-block;
             vertical-align: top;
             position: relative;
+            hyphens: auto;
         }
         .day {
             display: inline-block;
@@ -82,12 +85,14 @@ body.single article {
             border: 1px solid;
             line-height: 1;
             font-size: 0.8rem;
-            >a{ white-space:nowrap;}
+            >a {
+                white-space: nowrap;
+            }
         }
     }
-     .full-image-wrap{
+    .full-image-wrap {
         margin-bottom: 1.5rem;
-        >img{
+        >img {
             margin: 0px auto;
             display: block;
         }
@@ -153,7 +158,7 @@ body.single article {
                 max-height: 120px;
                 img {
                     height: 100%;
-                    width:auto;
+                    width: auto;
                 }
             }
         }
