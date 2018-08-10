@@ -1,5 +1,6 @@
 # Application
 web/app/plugins
+!web/app/plugins/baw-invitation-codes
 web/app/mu-plugins/*
 !web/app/mu-plugins/bedrock-autoloader.php
 !web/app/mu-plugins/disallow-indexing.php
