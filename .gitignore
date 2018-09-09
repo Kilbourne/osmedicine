@@ -1,6 +1,6 @@
 # Application
 web/app/plugins
-!web/app/plugins/baw-invitation-codes
+!web/app/plugins/baw-invitation-codes/
 web/app/mu-plugins/*
 !web/app/mu-plugins/bedrock-autoloader.php
 !web/app/mu-plugins/disallow-indexing.php
@@ -40,3 +40,6 @@ node_modules
 # Vagrant
 bin
 .vagrant
+wp-admin/
+wp-content/
+wp-includes/

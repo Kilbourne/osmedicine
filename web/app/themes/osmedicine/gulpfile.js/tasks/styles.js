@@ -32,9 +32,6 @@ var cssTasks = function(filename) {
       return $.if(enabled.maps, $.sourcemaps.init());
     })
     .pipe(function() {
-      return $.if('*.less', $.less());
-    })
-    .pipe(function() {
       return $.if('*.scss', $.sass(config.sass));
     })
     .pipe($.concatUtil, filename)

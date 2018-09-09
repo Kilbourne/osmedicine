@@ -1,7 +1,7 @@
 <?php
 
 namespace Roots\Sage\Setup;
-
+include "Mobile_Detect.php";
 use Roots\Sage\Assets;
 use Mobile_Detect;
 /**

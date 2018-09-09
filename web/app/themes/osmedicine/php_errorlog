@@ -1,0 +1,2 @@
+[29-Jul-2016 02:52:29 CST6CDT] PHP Fatal error:  Call to undefined function get_template_part() in /home/openso85/public_html/web/app/themes/osmedicine/index.php on line 4
+[10-Oct-2016 18:18:52 CST6CDT] PHP Fatal error:  Call to undefined function get_template_part() in /home/openso85/public_html/web/app/themes/osmedicine/index.php on line 4
